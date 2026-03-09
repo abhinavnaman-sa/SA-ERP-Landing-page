@@ -90,4 +90,27 @@
   document.querySelector(".back-to-top").onclick = () => {
     scrollTo(document.documentElement);
   };
+
+  // ===== Contact Form — send to ritank.s@sourceasia.co.in
+  const contactForm = document.querySelector(".ud-contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = (this.querySelector('[name="fullName"]').value || "").trim();
+      const email = (this.querySelector('[name="email"]').value || "").trim();
+      const phone = (this.querySelector('[name="phone"]').value || "").trim();
+      const message = (this.querySelector('[name="message"]').value || "").trim();
+
+      const subject = encodeURIComponent("Website Enquiry from " + (name || "Visitor"));
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Phone: " + phone + "\n\n" +
+        "Message:\n" + message
+      );
+
+      window.location.href =
+        "mailto:ritank.s@sourceasia.co.in?subject=" + subject + "&body=" + body;
+    });
+  }
 })();

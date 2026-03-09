@@ -18,6 +18,9 @@
   text-align: center;
   padding: 45px 30px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   &.active {
     background: linear-gradient(180deg, #3056d3 0%, #179bee 100%);
@@ -86,6 +89,7 @@
 
   .ud-pricing-body {
     margin-bottom: 40px;
+    flex: 1;
 
     li {
       font-weight: 500;
